@@ -6,7 +6,12 @@
 {% block content %}
 <ul>
     {% for books in books_list %}
-        <li> <a href="{{ books.get_absolute_url }}"> {{books.title}} </a></li>
+        <li> <a href="{{ books.get_absolute_url }}"> {{books.title}} </a>(rating {{books.rating}})</li>
     {% endfor %}
 </ul>
+
+<hr>
+<p>Total Books: {{total_books}} <br>
+    Avg Rating: {{avg_rating.rating__avg}}
+</p>
 {% endblock content %}
